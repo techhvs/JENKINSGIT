@@ -1,0 +1,20 @@
+automation project in which we have to create three different jobs in jenkins named as job1 which is for production , dev job for developer and testing , job3merge in which quality assurance team will check and manually trigger it using hook to deploy and merge different branches.
+Procedure :-
+1- Create a git repository with two different branches Master and Dev1
+
+2-we have created 3 jobs
+-job1
+-dev
+-job3merge
+
+3-we have created two docker containers containing webserver.
+-- first container is for production development
+--second container is for testing and QAT Development
+
+4-Job one work is to automatically download the file from GITHUB and copy it to attached volume with the Server and Expose to External Port that is 8082:80 in our case.
+
+4-Dev job work is to automatically download the file from GITHUB DEV1 Branch and copy it to attached volume with the Server and Expose to External Port that is 808:80 in our case for QAT which will check and trigger Merge Job manually
+
+5-Job3Merge is used to perform the merge option when content is Passed by Quality Assurance Team.
+
+6-We pre configured post-commit hooks for integration and deployment of our web file.
